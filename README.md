@@ -77,8 +77,8 @@ con `TODO(Sprint 1)` en `lib/main.dart` para inicializar Firebase.
 
 ### ✅ Sprint 1 — Base del proyecto (completo, verificado en dispositivo físico)
 - [x] Estructura Clean Architecture + Feature-First
-- [ ] Dependencias base (Firebase, BLoC, go_router, get_it)
-- [ ] Tema visual (colores/tipografías de marca)
+- [x] Dependencias base (Firebase, BLoC, go_router, get_it)
+- [x] Tema visual (colores/tipografías de marca)
 - [ ] Rutas iniciales con pantallas placeholder
 - [ ] Configuración real de Firebase (`flutterfire configure` — proyecto `handplay-718c1`)
 - [ ] Autenticación (`AuthBloc` + login/registro/recuperar contraseña, correo y Google)
