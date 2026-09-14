@@ -1,0 +1,19 @@
+// Guardamos cada "path" (la parte de la URL/ruta, ej. '/login') como
+// constante en vez de escribirlo directo donde se usa. Así, si algún
+// día cambiamos '/login' por '/iniciar-sesion', se edita en un solo
+// lugar y no hay que buscar el string por todo el proyecto.
+//
+// Los segmentos que empiezan con ":" (ej. ":torneoId") son parámetros
+// de ruta: go_router los reemplaza por el valor real en tiempo de
+// ejecución (ej. '/torneo/abc123') y permite leerlos de vuelta con
+// `state.pathParameters['torneoId']` (ver app_router.dart).
+
+/// Nombres y paths de ruta de Cancha, organizados según el mapa de
+/// navegación del documento de seguimiento:
+/// `Splash → Login/Registro → Inicio → Torneo → Partido`.
+class RouteNames {
+  RouteNames._();
+
+  static const String splash = '/';
+  static const String home = '/torneos';
+}
