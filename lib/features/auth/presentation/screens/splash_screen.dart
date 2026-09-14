@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(
-              Icons.sports_handball,
+              AppConstants.appLogoIcon,
               size: 72,
               color: Theme.of(context).colorScheme.primary,
             ),

@@ -9,12 +9,13 @@
 // `state.pathParameters['torneoId']` (ver app_router.dart).
 
 /// Nombres y paths de ruta de Cancha, organizados según el mapa de
-/// navegación del documento de seguimiento:
-/// `Splash → Login/Registro → Inicio → Torneo → Partido`.
+/// navegación del PRD. Cada ruta se define como una constante estática de la clase
 class RouteNames {
   RouteNames._();
 
   static const String splash = '/'; // Ruta de la pantalla de splash (pantalla inicial que se muestra al abrir la app)
   static const String home = '/torneos'; // Ruta de la pantalla de inicio (lista de torneos)
   static const String login = '/login'; // Ruta de la pantalla de login
+  static const String register = '/register'; // Ruta de la pantalla de registro
+  static const String recoverPassword = '/recover-password'; // Ruta de la pantalla de recuperación de contraseña
 }

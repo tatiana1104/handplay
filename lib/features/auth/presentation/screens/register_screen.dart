@@ -3,18 +3,20 @@ import 'package:go_router/go_router.dart';
 
 import '../../../../core/constants/app_constants.dart';
 import '../../../../core/routing/route_names.dart';
-import '../../../../shared/widgets/app_bottom_navigation_bar.dart'; // Importamos el widget de barra de navegación inferior para poder usarlo en la pantalla de login
+import '../../../../core/theme/app_colors.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class RegisterScreen extends StatelessWidget {
+  const RegisterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context); // Obtenemos el tema actual de la app para poder usar sus colores y estilos en la pantalla de login
-    final colorScheme = theme.colorScheme; // Obtenemos el esquema de colores del tema actual para poder usarlo en la pantalla de login
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final isDark = theme.brightness == Brightness.dark;
+    final brandColor = isDark ? AppColors.brandDark : AppColors.brandLight;
 
     return Scaffold(
-      backgroundColor: colorScheme.surface, // Color de fondo de la pantalla de login según el tema actual
+      backgroundColor: colorScheme.surface,
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
@@ -24,12 +26,28 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: TextButton.icon(
+                      onPressed: () => context.go(RouteNames.login),
+                      icon: Icon(
+                        Icons.arrow_back_ios_new_rounded,
+                        size: 18,
+                        color: colorScheme.primary,
+                      ),
+                      label: Text(
+                        'Volver',
+                        style: TextStyle(color: colorScheme.primary),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 8),
                   Center(
                     child: Container(
                       width: 82,
                       height: 82,
                       decoration: BoxDecoration(
-                        color: colorScheme.primary, 
+                        color: brandColor,
                         borderRadius: BorderRadius.circular(20),
                       ),
                       child: Icon(
@@ -41,7 +59,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
                   Text(
-                    'Bienvenido a ${AppConstants.appName}',
+                    'Crear cuenta',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 28,
@@ -51,7 +69,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 6),
                   Text(
-                    AppConstants.ligaNombre,
+                    'Crea tu cuenta para acceder a torneos y estadísticas.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 16,
@@ -59,6 +77,29 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 28),
+                  Text(
+                    'Nombre completo',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: colorScheme.onSurface,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: colorScheme.surfaceContainerHighest,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide.none,
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 18,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 18),
                   Text(
                     AppConstants.emailLabel,
                     style: TextStyle(
@@ -68,8 +109,6 @@ class LoginScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   TextFormField(
-                    initialValue: 'tucorreo@ejemplo.com',
-                    style: TextStyle(color: colorScheme.onSurface),
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: colorScheme.surfaceContainerHighest,
@@ -93,9 +132,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   TextFormField(
-                    initialValue: '********',
                     obscureText: true,
-                    style: TextStyle(color: colorScheme.onSurface),
                     decoration: InputDecoration(
                       filled: true,
                       fillColor: colorScheme.surfaceContainerHighest,
@@ -109,24 +146,35 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: TextButton(
-                      onPressed: () => context.go(RouteNames.recoverPassword),
-                      child: const Text(
-                        '¿Olvidaste tu contraseña?',
-                        style: TextStyle(
-                          color: Color(0xFF4AA765),
-                        ),
+                  const SizedBox(height: 18),
+                  Text(
+                    'Confirmar contraseña',
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: colorScheme.onSurface,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: colorScheme.surfaceContainerHighest,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(12),
+                        borderSide: BorderSide.none,
+                      ),
+                      contentPadding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 18,
                       ),
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  const SizedBox(height: 24),
                   FilledButton(
                     onPressed: () {},
                     style: FilledButton.styleFrom(
-                      backgroundColor: colorScheme.primary,
+                      backgroundColor: brandColor,
                       foregroundColor: colorScheme.onPrimary,
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
@@ -134,7 +182,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     child: const Text(
-                      'Iniciar sesión',
+                      'Crear cuenta',
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -194,13 +242,13 @@ class LoginScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        '¿No tienes cuenta?',
+                        '¿Ya tienes una cuenta?',
                         style: TextStyle(color: colorScheme.onSurfaceVariant),
                       ),
                       TextButton(
-                        onPressed: () => context.go(RouteNames.register),
+                        onPressed: () => context.go(RouteNames.login),
                         child: Text(
-                          'Regístrate',
+                          'Inicia sesión',
                           style: TextStyle(color: colorScheme.primary),
                         ),
                       ),
@@ -211,9 +259,6 @@ class LoginScreen extends StatelessWidget {
             ),
           ),
         ),
-      ),
-      bottomNavigationBar: const AppBottomNavigationBar(
-        selectedIndex: 2,
       ),
     );
   }

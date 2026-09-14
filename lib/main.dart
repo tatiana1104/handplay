@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import 'core/constants/app_constants.dart';
 import 'core/routing/route_names.dart'; // Importamos los nombres de ruta para poder usarlos en el router
 import 'core/theme/app_theme.dart'; // Importamos el tema de la app para poder usarlo en MaterialApp.router
 import 'features/auth/presentation/screens/login_screen.dart'; // Importamos la pantalla de login para poder usarla en el router
+import 'features/auth/presentation/screens/recover_password_screen.dart'; // Importamos la pantalla de recuperación de contraseña para poder usarla en el router
+import 'features/auth/presentation/screens/register_screen.dart'; // Importamos la pantalla de registro para poder usarla en el router
 import 'features/auth/presentation/screens/splash_screen.dart'; // Importamos la pantalla de splash para poder usarla en el router
 import 'features/tournaments/presentation/screens/torneos_screen.dart'; // Importamos la pantalla de torneos para poder usarla en el router
 
@@ -29,13 +32,21 @@ class HandPlayApp extends StatelessWidget {
         ),
         GoRoute(
           path: RouteNames.login,
-          builder: (context, state) => const LoginScreen(),
+          builder: (context, state) => const LoginScreen(), // Construimos la pantalla de login cuando se navega a esta ruta
+        ),
+        GoRoute(
+          path: RouteNames.register,
+          builder: (context, state) => const RegisterScreen(), // Construimos la pantalla de registro cuando se navega a esta ruta
+        ),
+        GoRoute(
+          path: RouteNames.recoverPassword,
+          builder: (context, state) => const RecoverPasswordScreen(), // Construimos la pantalla de recuperación cuando se navega a esta ruta
         ),
       ],
     );
 
     return MaterialApp.router(
-      title: 'HandPlay', // Definimos el título de la app que se muestra en la barra de tareas y en el switcher de apps
+      title: AppConstants.appName, // Definimos el título de la app que se muestra en la barra de tareas y en el switcher de apps
       theme: AppTheme.light, // Definimos el tema claro de la app que se aplica cuando el sistema está en modo claro
       darkTheme: AppTheme.dark, // Definimos el tema oscuro de la app que se aplica cuando el sistema está en modo oscuro
       themeMode: ThemeMode.system, // Definimos que el tema de la app se adapte al modo del sistema operativo (claro/oscuro)
