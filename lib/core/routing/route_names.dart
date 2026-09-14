@@ -14,6 +14,7 @@
 class RouteNames {
   RouteNames._();
 
-  static const String splash = '/';
-  static const String home = '/torneos';
+  static const String splash = '/'; // Ruta de la pantalla de splash (pantalla inicial que se muestra al abrir la app)
+  static const String home = '/torneos'; // Ruta de la pantalla de inicio (lista de torneos)
+  static const String login = '/login'; // Ruta de la pantalla de login
 }

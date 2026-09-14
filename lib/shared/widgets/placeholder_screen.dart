@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'app_bottom_navigation_bar.dart';
+
 // Este widget existe solo para que el router (app_router.dart) tenga
 // algo real para mostrar en rutas cuya pantalla definitiva todavía no
 // se ha construido. Así podemos navegar por TODA la app desde el
@@ -34,6 +36,7 @@ class PlaceholderScreen extends StatelessWidget {
           ),
         ),
       ),
+      bottomNavigationBar: const AppBottomNavigationBar(),
     );
   }
 }

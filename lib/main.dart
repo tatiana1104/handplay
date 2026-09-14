@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 
 import 'core/routing/route_names.dart'; // Importamos los nombres de ruta para poder usarlos en el router
 import 'core/theme/app_theme.dart'; // Importamos el tema de la app para poder usarlo en MaterialApp.router
+import 'features/auth/presentation/screens/login_screen.dart'; // Importamos la pantalla de login para poder usarla en el router
 import 'features/auth/presentation/screens/splash_screen.dart'; // Importamos la pantalla de splash para poder usarla en el router
 import 'features/tournaments/presentation/screens/torneos_screen.dart'; // Importamos la pantalla de torneos para poder usarla en el router
 
@@ -25,6 +26,10 @@ class HandPlayApp extends StatelessWidget {
         GoRoute(
           path: RouteNames.home,
           builder: (context, state) => const TorneosScreen(), // Construimos la pantalla de torneos cuando se navega a esta ruta
+        ),
+        GoRoute(
+          path: RouteNames.login,
+          builder: (context, state) => const LoginScreen(),
         ),
       ],
     );
