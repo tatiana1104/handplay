@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "178037221731",
+    "project_id": "handplay-718c1",
+    "storage_bucket": "handplay-718c1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178037221731:android:0ad7ef58f79012f74a0b56",
+        "android_client_info": {
+          "package_name": "com.example.handplay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178037221731-0g9o8sllpvmplq5qd89ulvlk5n8h1d7e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.handplay",
+            "certificate_hash": "6bb91a892edfa54989d86db244e41545221c4c60"
+          }
+        },
+        {
+          "client_id": "178037221731-c1jk676cao0jtg6ivvqslo058fm8l4c8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw45O0BwmgqAFRVYyaPhx6aZ6tg1nlohE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178037221731-c1jk676cao0jtg6ivvqslo058fm8l4c8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "178037221731-c73df9bj4kh6sbvf4bit9l1nt2jhl0ht.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.handplay"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
