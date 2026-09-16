@@ -82,7 +82,7 @@ con `TODO(Sprint 1)` en `lib/main.dart` para inicializar Firebase.
 - [x] Rutas iniciales con pantallas placeholder
 - [x] Configuración real de Firebase (`flutterfire configure` — proyecto `handplay-718c1`)
 - [x] Autenticación (`AuthBloc` + login/registro/recuperar contraseña, correo y Google)
-- [ ] Firestore Security Rules desplegadas (`firebase deploy --only firestore:rules`)
+- [x] Firestore Security Rules desplegadas (`firebase deploy --only "firestore:rules" --project handplay-718c1`)
 - [ ] Navegación protegida por rol (pendiente: `redirect` de go_router según `AuthBloc`)
 
 ### ⬜ Sprint 2 — Torneos y equipos
